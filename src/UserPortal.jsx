@@ -866,7 +866,7 @@ function CompanyProfilePage({ employer, isOwner=false, onBack }) {
   const accent = e.accentColor || C.navy;
 
   if (editMode && isOwner) return (
-    <div style={{ maxWidth:860, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 22px" }}>
       <div style={{ background:C.navy, borderRadius:16, padding:"20px 24px", marginBottom:20,
         display:"flex", justifyContent:"space-between", alignItems:"center" }}>
         <div>
@@ -900,7 +900,7 @@ function CompanyProfilePage({ employer, isOwner=false, onBack }) {
   );
 
   return (
-    <div style={{ maxWidth:860, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 22px" }}>
       {onBack && (
         <button onClick={onBack}
           style={{ display:"flex", alignItems:"center", gap:5, background:"none", border:"none",
@@ -1070,7 +1070,7 @@ function TalentPool({ candidates, onViewProfile }) {
   });
 
   return (
-    <div style={{ maxWidth:1100, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1300, margin:"0 auto", padding:"34px 22px" }}>
       <div style={{ marginBottom:22 }}>
         <div style={{ fontSize:22, fontWeight:800, color:C.navy }}>Talent Pool</div>
         <div style={{ fontSize:13, color:C.slate, marginTop:2 }}>{filtered.length} candidates available</div>
@@ -1180,7 +1180,7 @@ function CandidateProfilePage({ candidate:c, onBack }) {
   const col = completionColor(score);
 
   return (
-    <div style={{ maxWidth:820, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 22px" }}>
       <button onClick={onBack}
         style={{ display:"flex", alignItems:"center", gap:5, background:"none", border:"none",
           cursor:"pointer", color:C.slate, fontSize:13, fontWeight:600, marginBottom:20 }}>
@@ -1366,7 +1366,7 @@ function ProfileBuilder({ onComplete, onCancel }) {
     <div style={{ minHeight:"100vh", background:C.cream }}>
       {/* Step header */}
       <div style={{ background:C.navy, padding:"18px 24px 0" }}>
-        <div style={{ maxWidth:700, margin:"0 auto" }}>
+        <div style={{ maxWidth:1000, margin:"0 auto" }}>
           <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:18 }}>
             <div>
               <div style={{ color:C.white, fontWeight:700, fontSize:17 }}>Build Your Profile</div>
@@ -1392,7 +1392,7 @@ function ProfileBuilder({ onComplete, onCancel }) {
         </div>
       </div>
 
-      <div style={{ maxWidth:700, margin:"0 auto", padding:"32px 20px" }}>
+      <div style={{ maxWidth:1000, margin:"0 auto", padding:"32px 40px" }}>
         {/* Step 0 — Personal */}
         {step===0 && (
           <Card>
@@ -1610,7 +1610,7 @@ function CandidateProfileView({ candidate, onEdit }) {
   const col = completionColor(score);
 
   return (
-    <div style={{ maxWidth:860, margin:"0 auto", padding:"36px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"36px 22px" }}>
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center",
         marginBottom:18, flexWrap:"wrap", gap:10 }}>
         <div>
@@ -1685,7 +1685,7 @@ function NotificationsPage({ onViewCompany }) {
   const unread  = notifs.filter(n => n.unread).length;
 
   return (
-    <div style={{ maxWidth:660, margin:"0 auto", padding:"36px 22px" }}>
+    <div style={{ maxWidth:1300, margin:"0 auto", padding:"36px 22px" }}>
       <div style={{ marginBottom:26 }}>
         <div style={{ fontSize:23, fontWeight:800, color:C.navy }}>Interview Invitations</div>
         <div style={{ fontSize:13, color:C.slate, marginTop:3 }}>

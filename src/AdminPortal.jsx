@@ -821,7 +821,7 @@ function PlatformSettings() {
   );
 
   return (
-    <div style={{ maxWidth:680 }}>
+    <div style={{ maxWidth:1200 }}>
       <Card>
         <SecLbl>Candidate Settings</SecLbl>
         <Toggle k="autoApprove"  label="Auto-approve candidates"  desc="Bypass manual review — not recommended for production"/>
@@ -927,7 +927,7 @@ export default function AdminPortal() {
         onLogout={handleLogout}
         pendingCount={pendingCount}
       />
-      <div style={{ maxWidth:1200, margin:"0 auto", padding:"30px 22px" }}>
+      <div style={{ maxWidth:1400, margin:"0 auto", padding:"30px 40px" }}>
         {/* Page title */}
         <div style={{ marginBottom:22 }}>
           <div style={{ fontSize:22, fontWeight:800, color:C.navy }}>
