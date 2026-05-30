@@ -312,7 +312,7 @@ function UserLoginPage({ onLogin }) {
 
       {/* Left panel — branding, grows to fill all available space */}
       <div style={{ flex:"0 0 56%", display:"flex", flexDirection:"column", justifyContent:"center",
-        padding:"60px 8vw",
+        padding:"60px 10vw",
         background:"linear-gradient(160deg, rgba(201,168,76,0.06) 0%, transparent 60%)" }}>
         <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:56 }}>
           <div style={{ width:40, height:40, background:C.gold, borderRadius:10,
