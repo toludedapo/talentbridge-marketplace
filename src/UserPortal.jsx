@@ -307,7 +307,7 @@ function UserLoginPage({ onLogin }) {
   };
 
   return (
-    <div style={{ minHeight:"100vh", width:"100%", display:"flex",
+    <div style={{ minHeight:"100vh", width:"100vw", display:"flex",
       background:`linear-gradient(135deg, ${C.navy} 0%, #1a3a6b 100%)` }}>
 
       {/* Left panel — branding, grows to fill all available space */}
