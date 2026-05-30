@@ -29,7 +29,7 @@ const css = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { overflow-x: hidden; }
+  html, body, #root { margin: 0; padding: 0; width: 100%; min-height: 100vh; background: #0A1628; overflow-x: hidden; }
 
   /* ── Animated background noise grain ── */
   @keyframes grain {
@@ -82,10 +82,11 @@ const css = `
 
   .tb-land { 
     font-family: 'Outfit', sans-serif;
+    width: 100%; min-width: 100vw;
     min-height: 100vh;
     background: ${C.navy};
     color: ${C.cream};
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
   }
 
