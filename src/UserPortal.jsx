@@ -311,7 +311,7 @@ function UserLoginPage({ onLogin }) {
       background:`linear-gradient(135deg, ${C.navy} 0%, #1a3a6b 100%)` }}>
 
       {/* Left panel — branding, grows to fill all available space */}
-      <div style={{ flex:"0 0 55%", display:"flex", flexDirection:"column", justifyContent:"center",
+      <div style={{ flex:"0 0 56%", display:"flex", flexDirection:"column", justifyContent:"center",
         padding:"60px 8vw",
         background:"linear-gradient(160deg, rgba(201,168,76,0.06) 0%, transparent 60%)" }}>
         <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:56 }}>
