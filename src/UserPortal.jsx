@@ -311,7 +311,7 @@ function UserLoginPage({ onLogin }) {
       background:`linear-gradient(135deg, ${C.navy} 0%, #1a3a6b 100%)` }}>
 
       {/* Left panel — branding, grows to fill all available space */}
-      <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center",
+      <div style={{ flex:"0 0 55%", display:"flex", flexDirection:"column", justifyContent:"center",
         padding:"60px 8vw",
         background:"linear-gradient(160deg, rgba(201,168,76,0.06) 0%, transparent 60%)" }}>
         <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:56 }}>
@@ -348,7 +348,7 @@ function UserLoginPage({ onLogin }) {
 
       {/* Right panel — login form */}
       <div style={{ display:"flex", alignItems:"center", justifyContent:"center",
-        padding:"40px 5vw", flex:"0 0 480px" }}>
+        padding:"40px 48px", flex:"0 0 45%" }}>
         <div style={{ width:"100%", maxWidth:420 }}>
           <div style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.1)",
             borderRadius:20, padding:"36px 32px", backdropFilter:"blur(12px)" }}>
