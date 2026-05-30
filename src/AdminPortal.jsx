@@ -142,7 +142,7 @@ function AdminLoginPage({ onLogin }) {
   };
 
   return (
-    <div style={{ minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center",
+    <div style={{ minHeight:"100vh", width:"100%", display:"flex", alignItems:"center", justifyContent:"center",
       padding:20, position:"relative", overflow:"hidden",
       background:"linear-gradient(135deg, #1e0a3c 0%, #0A1628 60%, #0f2a1a 100%)" }}>
 
@@ -919,7 +919,7 @@ export default function AdminPortal() {
 
   // Logged in → admin dashboard
   return (
-    <div style={{ fontFamily:"'DM Sans','Segoe UI',sans-serif", minHeight:"100vh", background:C.cream }}>
+    <div style={{ fontFamily:"'DM Sans','Segoe UI',sans-serif", minHeight:"100vh", width:"100%", background:C.cream }}>
       <AdminNav
         admin={admin}
         activeTab={activeTab}

@@ -307,12 +307,12 @@ function UserLoginPage({ onLogin }) {
   };
 
   return (
-    <div style={{ minHeight:"100vh", display:"flex",
+    <div style={{ minHeight:"100vh", width:"100%", display:"flex",
       background:`linear-gradient(135deg, ${C.navy} 0%, #1a3a6b 100%)` }}>
 
-      {/* Left panel — branding */}
+      {/* Left panel — branding, grows to fill all available space */}
       <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center",
-        padding:"60px 56px", maxWidth:500,
+        padding:"60px 8vw",
         background:"linear-gradient(160deg, rgba(201,168,76,0.06) 0%, transparent 60%)" }}>
         <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:56 }}>
           <div style={{ width:40, height:40, background:C.gold, borderRadius:10,
@@ -348,8 +348,8 @@ function UserLoginPage({ onLogin }) {
 
       {/* Right panel — login form */}
       <div style={{ display:"flex", alignItems:"center", justifyContent:"center",
-        padding:"40px 32px", flex:"0 0 440px" }}>
-        <div style={{ width:"100%", maxWidth:380 }}>
+        padding:"40px 5vw", flex:"0 0 480px" }}>
+        <div style={{ width:"100%", maxWidth:420 }}>
           <div style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.1)",
             borderRadius:20, padding:"36px 32px", backdropFilter:"blur(12px)" }}>
             <div style={{ fontSize:22, fontWeight:800, color:C.white, marginBottom:4 }}>Sign In</div>
@@ -423,8 +423,8 @@ function UserLoginPage({ onLogin }) {
  */
 function Nav({ user, view, onNav, onLogout, notifCount=0 }) {
   return (
-    <nav style={{ background:C.navy, padding:"0 20px", display:"flex", alignItems:"center",
-      justifyContent:"space-between", height:60, position:"sticky", top:0, zIndex:100,
+    <nav style={{ background:C.navy, padding:"0 40px", display:"flex", alignItems:"center",
+      justifyContent:"space-between", height:60, width:"100%", position:"sticky", top:0, zIndex:100,
       boxShadow:"0 2px 20px rgba(10,22,40,0.3)", gap:12 }}>
       <div style={{ display:"flex", alignItems:"center", gap:9, cursor:"pointer", flexShrink:0 }}
         onClick={() => onNav("dashboard")}>
@@ -461,7 +461,7 @@ function Nav({ user, view, onNav, onLogout, notifCount=0 }) {
       {/* User identity + sign out */}
       <div style={{ display:"flex", alignItems:"center", gap:10, flexShrink:0 }}>
         <Av initials={user.initials} color={user.avatarColor} size={30} radius={7}/>
-        <div style={{ display:"none" /* hide on small screens */ }}>
+        <div style={{ display:"flex", flexDirection:"column" }}>
           <div style={{ fontSize:11, color:C.white, fontWeight:600 }}>{user.name}</div>
           <div style={{ fontSize:9, color:"rgba(255,255,255,0.4)", textTransform:"uppercase" }}>
             {user.role === "employer" ? user.company || "Employer" : "Candidate"}
@@ -671,7 +671,7 @@ function PipelineBoard({ pipeline, setPipeline }) {
   const active = pipeline.filter(c => !["Hired","Declined"].includes(c.stage)).length;
 
   return (
-    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 40px" }}>
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start",
         marginBottom:22, flexWrap:"wrap", gap:12 }}>
         <div>
@@ -866,7 +866,7 @@ function CompanyProfilePage({ employer, isOwner=false, onBack }) {
   const accent = e.accentColor || C.navy;
 
   if (editMode && isOwner) return (
-    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 40px" }}>
       <div style={{ background:C.navy, borderRadius:16, padding:"20px 24px", marginBottom:20,
         display:"flex", justifyContent:"space-between", alignItems:"center" }}>
         <div>
@@ -900,7 +900,7 @@ function CompanyProfilePage({ employer, isOwner=false, onBack }) {
   );
 
   return (
-    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 40px" }}>
       {onBack && (
         <button onClick={onBack}
           style={{ display:"flex", alignItems:"center", gap:5, background:"none", border:"none",
@@ -1070,7 +1070,7 @@ function TalentPool({ candidates, onViewProfile }) {
   });
 
   return (
-    <div style={{ maxWidth:1300, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1300, margin:"0 auto", padding:"34px 40px" }}>
       <div style={{ marginBottom:22 }}>
         <div style={{ fontSize:22, fontWeight:800, color:C.navy }}>Talent Pool</div>
         <div style={{ fontSize:13, color:C.slate, marginTop:2 }}>{filtered.length} candidates available</div>
@@ -1180,7 +1180,7 @@ function CandidateProfilePage({ candidate:c, onBack }) {
   const col = completionColor(score);
 
   return (
-    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"34px 40px" }}>
       <button onClick={onBack}
         style={{ display:"flex", alignItems:"center", gap:5, background:"none", border:"none",
           cursor:"pointer", color:C.slate, fontSize:13, fontWeight:600, marginBottom:20 }}>
@@ -1363,7 +1363,7 @@ function ProfileBuilder({ onComplete, onCancel }) {
   );
 
   return (
-    <div style={{ minHeight:"100vh", background:C.cream }}>
+    <div style={{ minHeight:"100vh", width:"100%", background:C.cream }}>
       {/* Step header */}
       <div style={{ background:C.navy, padding:"18px 24px 0" }}>
         <div style={{ maxWidth:1000, margin:"0 auto" }}>
@@ -1610,7 +1610,7 @@ function CandidateProfileView({ candidate, onEdit }) {
   const col = completionColor(score);
 
   return (
-    <div style={{ maxWidth:1200, margin:"0 auto", padding:"36px 22px" }}>
+    <div style={{ maxWidth:1200, margin:"0 auto", padding:"36px 40px" }}>
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center",
         marginBottom:18, flexWrap:"wrap", gap:10 }}>
         <div>
@@ -1685,7 +1685,7 @@ function NotificationsPage({ onViewCompany }) {
   const unread  = notifs.filter(n => n.unread).length;
 
   return (
-    <div style={{ maxWidth:1300, margin:"0 auto", padding:"36px 22px" }}>
+    <div style={{ maxWidth:1300, margin:"0 auto", padding:"36px 40px" }}>
       <div style={{ marginBottom:26 }}>
         <div style={{ fontSize:23, fontWeight:800, color:C.navy }}>Interview Invitations</div>
         <div style={{ fontSize:13, color:C.slate, marginTop:3 }}>
@@ -1770,7 +1770,7 @@ function EmployerShell({ user, onLogout }) {
   };
 
   return (
-    <div style={{ fontFamily:"'DM Sans','Segoe UI',sans-serif", minHeight:"100vh", background:C.cream }}>
+    <div style={{ fontFamily:"'DM Sans','Segoe UI',sans-serif", minHeight:"100vh", width:"100%", background:C.cream }}>
       {showOnboarding && <OnboardingFlow role="employer" onDone={() => setShowOnboarding(false)}/>}
       <Nav user={user} view={view} onNav={nav} onLogout={onLogout}/>
 
@@ -1826,7 +1826,7 @@ function CandidateShell({ user, onLogout }) {
   );
 
   return (
-    <div style={{ fontFamily:"'DM Sans','Segoe UI',sans-serif", minHeight:"100vh", background:C.cream }}>
+    <div style={{ fontFamily:"'DM Sans','Segoe UI',sans-serif", minHeight:"100vh", width:"100%", background:C.cream }}>
       {showOnboarding && <OnboardingFlow role="candidate" onDone={() => setShowOnboarding(false)}/>}
       <Nav user={user} view={view} onNav={nav} onLogout={onLogout} notifCount={unreadNotifs}/>
 
