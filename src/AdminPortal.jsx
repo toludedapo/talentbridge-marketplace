@@ -329,18 +329,18 @@ function StatsBar({ candidates, employers }) {
   ];
 
   return (
-    <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(130px, 1fr))",
-      gap:10, marginBottom:24 }}>
+    <div style={{ display:"flex", gap:14, marginBottom:28, width:"100%" }}>
       {stats.map(s => (
-        <div key={s.label}
-          style={{ background:s.highlight ? `${s.color}10` : C.white, borderRadius:12,
-            padding:"14px 16px", boxShadow:"0 2px 10px rgba(10,22,40,0.07)",
-            border:s.highlight ? `1.5px solid ${s.color}30` : "none" }}>
-          <div style={{ fontSize:10, color:C.slateLight, fontWeight:600,
-            textTransform:"uppercase", letterSpacing:"0.5px", marginBottom:6 }}>
-            {s.icon} {s.label}
+        <div key={s.label} style={{ flex:1, minWidth:0,
+            background:s.highlight ? `${s.color}10` : C.white, borderRadius:14,
+            padding:"20px 16px 18px", boxShadow:"0 2px 12px rgba(10,22,40,0.08)",
+            border:s.highlight ? `1.5px solid ${s.color}40` : `1px solid ${C.lightGray}` }}>
+          <div style={{ fontSize:18, marginBottom:10 }}>{s.icon}</div>
+          <div style={{ fontSize:48, fontWeight:900, color:s.color, lineHeight:1, marginBottom:8 }}>{s.val}</div>
+          <div style={{ fontSize:11, color:C.slateLight, fontWeight:600,
+            textTransform:"uppercase", letterSpacing:"0.8px", lineHeight:1.3 }}>
+            {s.label}
           </div>
-          <div style={{ fontSize:26, fontWeight:900, color:s.color, lineHeight:1 }}>{s.val}</div>
         </div>
       ))}
     </div>
